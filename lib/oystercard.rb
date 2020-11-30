@@ -1,3 +1,5 @@
+require './lib/station'
+
 class Oystercard
   MAXIMUM_BALANCE = 10
 
@@ -15,6 +17,12 @@ class Oystercard
 
   def deduct_fare(fare)
     @balance = @balance - fare
+  end
+
+  def touch_in
+  end
+  
+  def touch_out
   end
 
   private

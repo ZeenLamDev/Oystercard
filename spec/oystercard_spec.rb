@@ -34,4 +34,13 @@ describe Oystercard do
     end
   end
 
+  describe "#touch_in" do
+    it "allows person to touch_in" do
+      expect(subject).to respond_to(:touch_in)
+    end
+    it "allows person to touch_out" do
+      expect(subject).to respond_to(:touch_out)
+    end
+  end
+
 end
