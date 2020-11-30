@@ -11,7 +11,7 @@ describe Oystercard do
     it "returns 0 by default" do
       expect(subject.balance).to eq 0
     end
-    
+
     it "raises error if balance exceed maximum balance" do
       maximum_balance = Oystercard::MAXIMUM_BALANCE
       subject.top_up(maximum_balance)
@@ -24,7 +24,14 @@ describe Oystercard do
     it "adds money to the oystercard" do
       expect(subject).to respond_to(:top_up).with(1).argument
     end
+  end
 
+  describe "#deduct_fare" do
+    it "deduces fare from balance" do
+      subject.top_up(10)
+      subject.deduct_fare(3)
+      expect(subject.balance).to eql(7)
+    end
   end
 
 end
